@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.angelus.firebaseandroidangel.PantallaUser">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.8"
+        android:orientation="vertical"
+        android:layout_margin="5dp"
+        android:background="#9D8FAF">
+
+        <TextView
+            android:id="@+id/textLogotipo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="PANTALLA USER"
+            android:textStyle="bold"
+            android:layout_weight="8"
+            android:gravity="center"
+            android:background="#DBDCD9"
+            android:layout_margin="5dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#F4A460"
+            android:layout_margin="5dp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/buttonMisProductos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="MIS PRODUCTOS"/>
+            <Button
+                android:id="@+id/buttonAnadirProducto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="AÑADIR PRODUCTO"/>
+            <Button
+                android:id="@+id/buttonModificarProducto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="MODIFICAR PRODUCTO"/>
+            <Button
+                android:id="@+id/buttonBorrarProducto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="BORRAR PRODUCTO"/>
+            <Button
+                android:id="@+id/buttonBusquedaProductos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="BUSQUEDA PRODUCTOS"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--AQUI EMPIEZA EL LAYOUT DE LA DERECHA-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.1"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/buttonGaleria"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="SELECT FOTO"
+                android:layout_weight="3"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+            <ImageView
+                android:id="@+id/miImagen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"/>
+            </LinearLayout>
+        </LinearLayout>
+
+            <ListView
+                android:id="@+id/listViewZonaCargo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="#FF0000"
+                android:clickable="true"
+                android:focusable="true"
+                android:dividerHeight="1.5dp"
+                android:layout_weight="1.3">
+
+            </ListView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <EditText
+                    android:id="@+id/editTextNombreProducto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nombre"
+                    android:layout_weight="1"/>
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/editTextDescripciónProducto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Descripción"
+                    android:layout_weight="1"
+                    />
+                </ScrollView>
+                <Spinner
+                    android:id="@+id/spinnerCategoria"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Categoría">
+
+                </Spinner>
+                <EditText
+                    android:id="@+id/editTextPrecioProducto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Precio"
+                    android:layout_weight="1"/>
+                <Button
+                    android:id="@+id/buttonTodoTerreno"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="TODOTERRENO"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1.8">
+
+                <RadioGroup
+                    android:id="@+id/radioGroupTotal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <RadioButton
+                        android:id="@+id/radioButtonPorUsuario"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="POR USUARIO"
+                        android:textSize="17px"
+                        android:layout_weight="1.6"
+                        android:gravity="center"/>
+                    <RadioButton
+                        android:id="@+id/radioButtonPorCategoria"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="POR CATEGORIA"
+                        android:textSize="17px"
+                        android:layout_weight="1"
+                        android:gravity="top"/>
+                </RadioGroup>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

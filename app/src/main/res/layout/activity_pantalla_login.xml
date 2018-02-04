@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.angelus.firebaseandroidangel.PantallaLogin"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:gravity="center">
+
+    <AutoCompleteTextView
+        android:id="@+id/ediTextLoginEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/prompt_email"
+        android:inputType="textEmailAddress"
+        android:maxLines="1"
+        android:singleLine="true" />
+
+    <EditText
+        android:id="@+id/editTextLoginPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/prompt_password"
+        android:inputType="textPassword" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+
+        <Button
+            android:id="@+id/buttonLOGIN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LOG IN"/>
+
+
+        <ImageView
+            android:layout_marginTop="15dp"
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@android:drawable/ic_secure"
+            android:scaleX="3"
+            android:scaleY="3"/>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.75">
+
+        <TextView
+            android:id="@+id/textViewZONADONDESIQUIEROMUESTRO"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Todos mis derechos estan reservados"/>
+    </LinearLayout>
+</LinearLayout>

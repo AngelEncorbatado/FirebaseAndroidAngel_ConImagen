@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "200164322962",
+    "firebase_url": "https://fir-androidangel.firebaseio.com",
+    "project_id": "fir-androidangel",
+    "storage_bucket": "fir-androidangel.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:200164322962:android:1f04d9d03a9e0254",
+        "android_client_info": {
+          "package_name": "com.example.angelus.firebaseandroidangel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "200164322962-irte75566kmk8kld4vfb72grig0t9a71.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.angelus.firebaseandroidangel",
+            "certificate_hash": "d95af341b6db631968c1b1b35faf5e5ff0ab6132"
+          }
+        },
+        {
+          "client_id": "200164322962-5pnp6e7dc63qifu2dk1ni7vrj6qv02ls.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBoaR-Qb-I-kCQy7k1KTHz1wdWf1WsQv7g"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "200164322962-5pnp6e7dc63qifu2dk1ni7vrj6qv02ls.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

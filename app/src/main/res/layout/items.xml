@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/layou1"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:clickable="false"
+    android:focusable="false">
+
+    <LinearLayout
+        android:id="@+id/layou2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:clickable="false"
+        android:focusable="false">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/miImagenAdapter"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/layou3"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:clickable="false"
+            android:focusable="false"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:id="@+id/scroll1"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="#7FCDCD"
+                android:clickable="false"
+                android:focusable="false">
+
+                <TextView
+                    android:id="@+id/textViewNombreProductoListView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#7FCDCD"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:text="Nombre"
+                    android:textStyle="bold" />
+            </ScrollView>
+
+            <ScrollView
+                android:id="@+id/scroll2"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="#EFC050"
+                android:clickable="false"
+                android:focusable="false">
+
+                <TextView
+                    android:id="@+id/textViewDescripcionProductoListView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#EFC050"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:text="Descripcion" />
+
+            </ScrollView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layou4"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:clickable="false"
+            android:focusable="false"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/textViewCategoriaProductoListView"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="#EFC050"
+                android:clickable="false"
+                android:focusable="false"
+                android:text="Categoria"
+                android:textStyle="bold|italic" />
+
+            <TextView
+                android:id="@+id/textViewPrecioProductoListView"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="#7FCDCD"
+                android:clickable="false"
+                android:focusable="false"
+                android:text="Precio"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
