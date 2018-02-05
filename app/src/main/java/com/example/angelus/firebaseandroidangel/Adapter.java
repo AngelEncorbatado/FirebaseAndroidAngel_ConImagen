@@ -9,13 +9,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ScrollView;
+
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import javax.crypto.spec.DESKeySpec;
+
 
 public class Adapter extends BaseAdapter{
     private Context contexto;
@@ -104,7 +103,11 @@ public class Adapter extends BaseAdapter{
         precio.setText("Precio: "+miProducto.getPrecio());
 
         if(miProducto.getMiImagen() != null) {
-            miImagen = miProducto.getMiImagen();
+            //miImagen = miProducto.getMiImagen();
+
+            miImagen.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            miImagen.setImageDrawable(miProducto.getMiImagen().getDrawable());
+
 
         }
 

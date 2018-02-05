@@ -59,12 +59,13 @@ public class PantallaUser extends AppCompatActivity {
     private ArrayAdapter<String> miArrayAdapter;
 
     private Button miButtonGaleria;
-    private ImageView miImagen;
+    private ImageView miImagen, miImagencilla;
     private StorageReference mStorageRef;
     private StorageReference mStorageRedImagenes;
     private String miRutaReferencia, miNombredeArchivo, miUIDUserMomentaneo;
     private Uri miUri;
     private UploadTask uploadTask;
+    private Producto productoGuay;
 
     private ListView miListView;
     private Adapter miAdapter;//Invoco a esta clase que he creado para rellenar con sus metodos mi ListView
@@ -559,13 +560,13 @@ public class PantallaUser extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-
+                final long ONE_MEGABYTE = 1024 * 1024;
                 miArrayListProductos = new ArrayList<Producto>();
 
                 for(DataSnapshot dataSnapshot1: dataSnapshot.getChildren()){
 
 
-                    final Producto producto = dataSnapshot1.getValue(Producto.class);
+                    productoGuay = dataSnapshot1.getValue(Producto.class);
 
                     String claveMomentanea = dataSnapshot1.getKey();//ESta linea añadida el 03/02/2018,es para StorageReference de las imagenes de este usario y producto
 
@@ -576,42 +577,27 @@ public class PantallaUser extends AppCompatActivity {
 
                     Log.d("PATH", "images/"+miUIDUserMomentaneo+"/"+claveMomentanea+"/altavoz.png");
 
-                    mStorageRedImagenes.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+
+
+
+                    mStorageRedImagenes.getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
                         @Override
-                        public void onSuccess(Uri uri) {
-                            // Got the download URL for 'users/me/profile.png'
+                        public void onSuccess(byte[] bytes) {
+                                    miImagencilla = new ImageView(getApplicationContext());
+                                    Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+                                    //miImagen.setVisibility(View.VISIBLE);
+                                    miImagencilla.setImageBitmap(bitmap);
+                                    productoGuay.setMiImagen(miImagencilla);
 
-
-                            Log.d("DENTRO DE ONSUCCES", uri.getPath());
-                            InputStream imageStream = null;
-                            try {
-                                imageStream = getContentResolver().openInputStream(uri);
-
-                            } catch (FileNotFoundException e) {
-                                e.printStackTrace();
-                            }
-
-                            // Transformamos la URI de la imagen a inputStream y este a un Bitmap
-                            Bitmap bmp = BitmapFactory.decodeStream(imageStream);
-                            ImageView miImagencilla = null;
-                            //miImagencilla.setImageBitmap(bmp);
-                            //https://firebasestorage.googleapis.com/v0/b/fir-androidangel.appspot.com/o/images%2FNI6e8KqBzJfLYco7SGPb9MyvV6j2%2F-L4UxVYdG6MenFR0hs6S%2Faltavoz.png?alt=media&token=59f600d0-65ee-44b1-a200-e0ee29bb7069
-                            //https://firebasestorage.googleapis.com/v0/b/fir-androidangel.appspot.com/o/images%2FNI6e8KqBzJfLYco7SGPb9MyvV6j2%2F-L4UxVYdG6MenFR0hs6S%2Faltavoz.png?alt=media&token=59f600d0-65ee-44b1-a200-e0ee29bb7069
-                            miImagen.setImageBitmap(bmp);
-
-                            producto.setMiImagen(miImagen);
                         }
                     }).addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception exception) {
-                            // Handle any errors
-                        }
-                    });
+                    @Override
+                    public void onFailure(@NonNull Exception exception) {
+                        // Handle any errors
+                    }
+                });
 
-
-
-
-                    miArrayListProductos.add(producto);
+                    miArrayListProductos.add(productoGuay);
                 }
 
                 miAdapter = new Adapter(getApplicationContext(), miArrayListProductos);//veamos que hay una clase creada nuestra llamada Adapter, que recibe un arrayList de objetos Producto
